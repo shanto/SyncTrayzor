@@ -51,3 +51,5 @@ deploy
 /src/SyncTrayzor/Icons/*.png
 security/private_key.asc
 chocolatey/tools/LICENSE.txt
+
+deps/

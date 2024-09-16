@@ -46,18 +46,20 @@ If you already have SyncTrayzor installed, this will update it.
 
 ### Standalone
 
-First, you'll need .net 4.7.2. [Download the offline](https://support.microsoft.com/en-gb/help/4054530/microsoft-net-framework-4-7-2-offline-installer-for-windows) or [web installer](https://support.microsoft.com/en-gb/help/4054531/microsoft-net-framework-4-7-2-web-installer-for-windows) if you don't have it installed already.
+First, you'll need .net 4.8. [Download the offline](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer) or [web installer](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer) if you don't have it installed already.
 
 [Download `SyncTrayzorPortable-x64.zip` or `SyncTrayzorPortable-x86.zip`](https://github.com/canton7/SyncTrayzor/releases/latest).
 Unzip, and run `SyncTrayzor.exe`. If you're updating, you'll need to copy the `data` folder across from your previous standalone installation.
 
+### Chocolatey/WinGet Packages
 
-### Chocolatey
-
-The installed version of SyncTrayzor is also [available on Chocolatey](https://chocolatey.org/packages/synctrayzor).
+The installed version of SyncTrayzor is also [available on Chocolatey](https://chocolatey.org/packages/synctrayzor) and WinGet.
 
 ```
-C:\> choco install synctrayzor
+choco.exe install synctrayzor
+```
+```
+winget.exe install --id "SyncTrayzor.SyncTrayzor" --exact --source winget
 ```
 
 Something went wrong!

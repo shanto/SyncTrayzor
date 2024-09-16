@@ -65,7 +65,6 @@ namespace SyncTrayzor.Pages
         public void ShowSettings()
         {
             var vm = this.settingsViewModelFactory();
-            vm.SelectLoggingTab();
             this.windowManager.ShowDialog(vm);
         }
 

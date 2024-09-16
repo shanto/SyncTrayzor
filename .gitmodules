@@ -1,0 +1,3 @@
+[submodule "deps/WPFDarkTheme"]
+	path = deps/WPFDarkTheme
+	url = https://github.com/AngryCarrot789/WPFDarkTheme.git

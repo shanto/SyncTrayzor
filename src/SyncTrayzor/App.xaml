@@ -15,7 +15,11 @@
                 <ResourceDictionary Source="Xaml/Resources.xaml"/>
                 <ResourceDictionary Source="Xaml/PassiveListView.xaml"/>
                 <ResourceDictionary Source="Xaml/BoringListView.xaml"/>
-                
+                <!-- Contains all of the colours and brushes for a theme -->
+                <ResourceDictionary Source="/Theme.WPF;component/Themes/ColourDictionaries/DarkGreyTheme.xaml"/>
+                <ResourceDictionary Source="/Theme.WPF;component/Themes/ControlColours.xaml"/>
+                <ResourceDictionary Source="/Theme.WPF;component/Themes/Controls.xaml"/>
+                <ResourceDictionary Source="Xaml/Theme.xaml" />
                 <ResourceDictionary>
                     <design:ViewModelLocator x:Key="ViewModelLocator"/>
                 </ResourceDictionary>

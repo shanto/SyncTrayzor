@@ -1,4 +1,4 @@
-﻿<Window x:Class="SyncTrayzor.Pages.ShellView"
+<Window x:Class="SyncTrayzor.Pages.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:s="https://github.com/canton7/Stylet"
@@ -28,7 +28,7 @@
     </Window.InputBindings>
     <DockPanel>
         <Grid DockPanel.Dock="Top">
-            <Menu>
+            <Menu Padding="5">
                 <MenuItem Header="{l:Loc ShellView_Menu_File}">
                     <MenuItem Header="{l:Loc ShellView_Menu_File_Settings}" Command="{s:Action ShowSettings}"/>
                     <MenuItem Header="{l:Loc ShellView_Menu_File_ConflictResolver}" Command="{s:Action ShowConflictResolver}"/>
@@ -58,7 +58,7 @@
                     <MenuItem Header="{l:Loc ShellView_Menu_Help_About}" Command="{s:Action ShowAbout}"/>
                 </MenuItem>
             </Menu>
-            <TextBlock HorizontalAlignment="Right" Margin="0,0,5,0" Visibility="{Binding DonationManager.HaveDonated, Converter={x:Static s:BoolToVisibilityConverter.InverseInstance}}">
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,5,0" Visibility="{Binding DonationManager.HaveDonated, Converter={x:Static s:BoolToVisibilityConverter.InverseInstance}}" VerticalAlignment="Center">
                 <Hyperlink s:View.ActionTarget="{Binding DonationManager}" Command="{s:Action Donate}" >
                     <TextBlock Text="{l:Loc ShellView_Donate}"/>
                 </Hyperlink>
