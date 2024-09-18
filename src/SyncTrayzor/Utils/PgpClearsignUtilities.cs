@@ -40,7 +40,7 @@ namespace SyncTrayzor.Utils
             foreach (string userId in secretKey.PublicKey.GetUserIds())
             {
                 var signatureSubpacketGenerator = new PgpSignatureSubpacketGenerator();
-                signatureSubpacketGenerator.SetSignerUserId(isCritical: false, userId: userId);
+                signatureSubpacketGenerator.AddSignerUserId(isCritical: false, userId: userId);
                 signatureGenerator.SetHashedSubpackets(signatureSubpacketGenerator.Generate());
                 // Just the first one!
                 break;
