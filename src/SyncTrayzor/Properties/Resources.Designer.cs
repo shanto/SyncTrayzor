@@ -1690,6 +1690,15 @@ namespace SyncTrayzor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to _Themes.
+        /// </summary>
+        public static string ShellView_Menu_Themes {
+            get {
+                return ResourceManager.GetString("ShellView_Menu_Themes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _View.
         /// </summary>
         public static string ShellView_Menu_View {

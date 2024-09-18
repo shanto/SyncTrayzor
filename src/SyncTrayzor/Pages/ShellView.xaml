@@ -48,6 +48,14 @@
                 <MenuItem Header="{l:Loc ShellView_Menu_View}">
                     <MenuItem Header="{l:Loc ShellView_Menu_View_SyncthingConsole}" IsCheckable="True" IsChecked="{Binding ShowConsole}"/>
                     <Separator/>
+                    <MenuItem Header="{l:Loc ShellView_Menu_Themes}">
+                        <MenuItem Header="System"       Command="{s:Action SwitchTheme}" CommandParameter="SystemTheme"></MenuItem>
+                        <MenuItem Header="Light"        Command="{s:Action SwitchTheme}" CommandParameter="LightTheme"></MenuItem>
+                        <MenuItem Header="Grey"         Command="{s:Action SwitchTheme}" CommandParameter="GreyTheme"></MenuItem>
+                        <MenuItem Header="Soft Dark"    Command="{s:Action SwitchTheme}" CommandParameter="SoftDark"></MenuItem>
+                        <MenuItem Header="Dark Grey"    Command="{s:Action SwitchTheme}" CommandParameter="DarkGreyTheme"></MenuItem>
+                        <MenuItem Header="Deep Dark"    Command="{s:Action SwitchTheme}" CommandParameter="DeepDark"></MenuItem>
+                    </MenuItem>
                     <MenuItem Header="{l:Loc ShellView_Menu_Zoom}" IsEnabled="{Binding CanZoomBrowser}">
                         <MenuItem Header="{l:Loc ShellView_Menu_Zoom_In}" InputGestureText="Ctrl++" Command="{s:Action BrowserZoomIn}"/>
                         <MenuItem Header="{l:Loc ShellView_Menu_Zoom_Out}" InputGestureText="Ctrl+-" Command="{s:Action BrowserZoomOut}"/>

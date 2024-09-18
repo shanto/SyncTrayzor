@@ -181,6 +181,7 @@
     <Compile Include="Services\Config\WindowPlacement.cs" />
     <Compile Include="Services\Conflicts\ConflictFileManager.cs" />
     <Compile Include="Services\Conflicts\ConflictFileWatcher.cs" />
+    <Compile Include="Services\ThemeManager.cs" />
     <Compile Include="Services\DonationManager.cs" />
     <Compile Include="Services\FilesystemProvider.cs" />
     <Compile Include="Services\FileWatcher.cs" />
@@ -574,6 +575,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Licenses\WPFDarkTheme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\deps\syncthing.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BouncyCastle.Cryptography">

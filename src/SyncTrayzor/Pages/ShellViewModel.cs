@@ -28,6 +28,7 @@ namespace SyncTrayzor.Pages
         public double ConsoleHeight { get; set; }
         public WindowPlacement Placement { get; set; }
         public IDonationManager DonationManager { get; }
+        public IThemeManager ThemeManager { get; }
 
         private readonly Subject<bool> _activateObservable = new Subject<bool>();
         public IObservable<bool> ActivateObservable => this._activateObservable;
@@ -49,7 +50,8 @@ namespace SyncTrayzor.Pages
             Func<AboutViewModel> aboutViewModelFactory,
             Func<ConflictResolutionViewModel> confictResolutionViewModelFactory,
             IProcessStartProvider processStartProvider,
-            IDonationManager donationManager)
+            IDonationManager donationManager,
+            IThemeManager themeManager)
         {
             this.windowManager = windowManager;
             this.syncthingManager = syncthingManager;
@@ -63,6 +65,7 @@ namespace SyncTrayzor.Pages
             this.confictResolutionViewModelFactory = confictResolutionViewModelFactory;
             this.processStartProvider = processStartProvider;
             this.DonationManager = donationManager;
+            this.ThemeManager = themeManager;
 
             var configuration = this.configurationProvider.Load();
 
@@ -95,7 +98,7 @@ namespace SyncTrayzor.Pages
         public bool CanStop => this.SyncthingState == SyncthingState.Running;
         public async void Stop()
         {
-            await this .syncthingManager.StopAsync();
+            await this.syncthingManager.StopAsync();
         }
 
         public bool CanRestart => this.SyncthingState == SyncthingState.Running;
@@ -152,6 +155,11 @@ namespace SyncTrayzor.Pages
         public void BrowserZoomReset()
         {
             this.Viewer.ZoomReset();
+        }
+
+        public void SwitchTheme(string theme)
+        {
+            this.ThemeManager.SetTheme(theme);
         }
 
         public void ShowAbout()

@@ -76,6 +76,7 @@ namespace SyncTrayzor
             builder.Bind<IPathTransformer>().To<PathTransformer>().InSingletonScope();
             builder.Bind<IConnectedEventDebouncer>().To<ConnectedEventDebouncer>();
             builder.Bind<IDonationManager>().To<DonationManager>().InSingletonScope();
+            builder.Bind<IThemeManager>().To<ThemeManager>().InSingletonScope();
 
             if (AppSettings.Instance.Variant == SyncTrayzorVariant.Installed)
                 builder.Bind<IUpdateVariantHandler>().To<InstalledUpdateVariantHandler>();
@@ -167,6 +168,8 @@ namespace SyncTrayzor
             var configurationProvider = this.Container.Get<IConfigurationProvider>();
             configurationProvider.Initialize(AppSettings.Instance.DefaultUserConfiguration);
             var configuration = this.Container.Get<IConfigurationProvider>().Load();
+
+            this.Container.Get<IThemeManager>().SetTheme(configuration.Theme);
 
             if (AppSettings.Instance.EnforceSingleProcessPerUser)
             {

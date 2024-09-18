@@ -1,4 +1,4 @@
-﻿<Application x:Class="SyncTrayzor.App"
+<Application x:Class="SyncTrayzor.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:s="https://github.com/canton7/Stylet"
@@ -9,17 +9,17 @@
             <s:ApplicationLoader.Bootstrapper>
                 <local:Bootstrapper/>
             </s:ApplicationLoader.Bootstrapper>
-            
             <s:ApplicationLoader.MergedDictionaries>
                 <ResourceDictionary Source="NotifyIcon/TaskbarIconResources.xaml"/>
                 <ResourceDictionary Source="Xaml/Resources.xaml"/>
                 <ResourceDictionary Source="Xaml/PassiveListView.xaml"/>
                 <ResourceDictionary Source="Xaml/BoringListView.xaml"/>
-                <!-- Contains all of the colours and brushes for a theme -->
-                <ResourceDictionary Source="/Theme.WPF;component/Themes/ColourDictionaries/DarkGreyTheme.xaml"/>
+                <!-- ordering and placement of these 4 files are important -->
+                <ResourceDictionary Source="/Theme.WPF;component/Themes/ColourDictionaries/SoftDark.xaml"/>
                 <ResourceDictionary Source="/Theme.WPF;component/Themes/ControlColours.xaml"/>
                 <ResourceDictionary Source="/Theme.WPF;component/Themes/Controls.xaml"/>
                 <ResourceDictionary Source="Xaml/Theme.xaml" />
+                <!-- do not break the group of 4 above -->
                 <ResourceDictionary>
                     <design:ViewModelLocator x:Key="ViewModelLocator"/>
                 </ResourceDictionary>
