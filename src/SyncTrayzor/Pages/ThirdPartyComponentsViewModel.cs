@@ -178,16 +178,26 @@ namespace SyncTrayzor.Pages
                     License = "MIT",
                     Notes = "Use to draw the network usage graph in the tray popup",
                     LicenseText = this.LoadLicense("OxyPlot.txt")
+                },
+                new ThirdPartyComponent()
+                {
+                    Name = "WPFDarkTheme",
+                    Description = "A small WPF (and WIP Avalonia) theme library, with 6 built in themes which are easily copy and pasteable, and the MainWindow shows off the themes",
+                    Homepage = "https://github.com/AngryCarrot789/WPFDarkTheme",
+                    License = "MIT",
+                    Notes = "Used for dark mode theme support",
+                    LicenseText = this.LoadLicense("WPFDarkTheme.txt")
                 }
             }.OrderBy(x => x.Name));
         }
 
         private string LoadLicense(string licenseName)
         {
-           using (var sr = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("SyncTrayzor.Resources.Licenses." + licenseName)))
-           {
-               return sr.ReadToEnd();
-           }
+            var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SyncTrayzor.Resources.Licenses." + licenseName);
+            using (var sr = new StreamReader(stream))
+            {
+                return sr.ReadToEnd();
+            }
         }
 
         public void ViewHomepage()
