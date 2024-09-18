@@ -9,29 +9,33 @@
     <Style TargetType="Button" x:Key="DialogButton" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Padding" Value="10,5"/>
     </Style>
+    
     <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
         <Style.Resources>
             <SolidColorBrush x:Key="MenuItem.Disabled.Background" Color="Transparent"></SolidColorBrush>
         </Style.Resources>
     </Style>
+    
     <Style x:Key="WindowEx" TargetType="Window">
         <Setter Property="Background" Value="{StaticResource Window.Static.Background}" />
     </Style>
+    <Style TargetType="p:ShellView" BasedOn="{StaticResource WindowEx}" />
+    <Style TargetType="p:AboutView" BasedOn="{StaticResource WindowEx}" />
+    <Style TargetType="p:ThirdPartyComponentsView" BasedOn="{StaticResource WindowEx}"/>
+    <Style TargetType="p:UnhandledExceptionView" BasedOn="{StaticResource WindowEx}"/>
+    <Style TargetType="c:ConflictResolutionView" BasedOn="{StaticResource WindowEx}"/>
     <Style TargetType="st:MessageBoxView" BasedOn="{StaticResource WindowEx}">
         <Setter Property="Background" Value="{StaticResource Window.Static.Background}"/>
         <Style.Resources>
             <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
         </Style.Resources>
     </Style>
-    <Style TargetType="p:ShellView" BasedOn="{StaticResource WindowEx}" />
     <Style TargetType="s:SettingsView" BasedOn="{StaticResource WindowEx}">
         <Style.Resources>
             <Style TargetType="Button" BasedOn="{StaticResource DialogButton}"/>
         </Style.Resources>
     </Style>
-    <Style TargetType="p:AboutView" BasedOn="{StaticResource WindowEx}" />
-    <Style TargetType="p:UnhandledExceptionView" BasedOn="{StaticResource WindowEx}"/>
-    <Style TargetType="c:ConflictResolutionView" BasedOn="{StaticResource WindowEx}"/>
+
     <Style TargetType="p:ViewerView">
         <Setter Property="Background" Value="{StaticResource Window.Static.Background}" />
     </Style>
