@@ -16,7 +16,7 @@
         </Style.Resources>
     </Style>
     
-    <Style x:Key="WindowEx" TargetType="Window">
+    <Style x:Key="WindowEx" TargetType="Window" BasedOn="{StaticResource CustomWindowStyle}">
         <Setter Property="Background" Value="{StaticResource Window.Static.Background}" />
     </Style>
     <Style TargetType="p:ShellView" BasedOn="{StaticResource WindowEx}" />
@@ -24,13 +24,17 @@
     <Style TargetType="p:ThirdPartyComponentsView" BasedOn="{StaticResource WindowEx}"/>
     <Style TargetType="p:UnhandledExceptionView" BasedOn="{StaticResource WindowEx}"/>
     <Style TargetType="c:ConflictResolutionView" BasedOn="{StaticResource WindowEx}"/>
-    <Style TargetType="st:MessageBoxView" BasedOn="{StaticResource WindowEx}">
+    <Style TargetType="st:MessageBoxView">
         <Setter Property="Background" Value="{StaticResource Window.Static.Background}"/>
+        <Setter Property="SizeToContent" Value="Height"/>
+        <Setter Property="Width" Value="400"/>
         <Style.Resources>
             <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
         </Style.Resources>
     </Style>
     <Style TargetType="s:SettingsView" BasedOn="{StaticResource WindowEx}">
+        <Setter Property="SizeToContent" Value="Height"/>
+        <Setter Property="Width" Value="420"/>
         <Style.Resources>
             <Style TargetType="Button" BasedOn="{StaticResource DialogButton}"/>
         </Style.Resources>

@@ -15,7 +15,7 @@
         MinWidth="430"
         MinHeight="400" 
         FlowDirection="{x:Static l:Localizer.FlowDirection}"
-        SizeToContent="WidthAndHeight">
+        SizeToContent="Height">
     <i:Interaction.Behaviors>
         <xaml:NoSizeBelowScreenBehaviour/>
     </i:Interaction.Behaviors>
