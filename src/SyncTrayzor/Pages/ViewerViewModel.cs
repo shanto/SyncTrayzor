@@ -93,7 +93,7 @@ namespace SyncTrayzor.Pages
 
         protected override void OnInitialActivate()
         {
-            if (!Cef.IsInitialized)
+            if (Cef.IsInitialized != true)
             {
                 var configuration = this.configurationProvider.Load();
 
