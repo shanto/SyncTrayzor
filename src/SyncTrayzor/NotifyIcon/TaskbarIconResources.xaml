@@ -21,7 +21,7 @@
                     MenuActivation="RightClick"
                     ToolTipText="SyncTrayzor">
         <tb:TaskbarIcon.TrayPopup>
-            <Popup StaysOpen="False" Placement="Relative" HorizontalOffset="-150" VerticalOffset="100" Width="300" PlacementTarget="{Binding ElementName=TaskbarIcon}" AllowsTransparency="True">
+            <Popup StaysOpen="False" Placement="RelativePoint" Width="300" PlacementTarget="{Binding ElementName=TaskbarIcon}" AllowsTransparency="True">
                 <i:Interaction.Behaviors>
                     <xaml:PopupConductorBehaviour DataContext="{Binding FileTransfersViewModel}"/>
                 </i:Interaction.Behaviors>
