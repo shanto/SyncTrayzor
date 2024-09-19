@@ -37,6 +37,7 @@
     <ApplicationIcon>Icons\default.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
+    <OutputPath>..\..\bin\$(MSBuildProjectName)\$(Platform)-$(Configuration)</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
