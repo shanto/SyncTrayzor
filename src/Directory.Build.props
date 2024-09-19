@@ -1,0 +1,5 @@
+<Project>
+   <PropertyGroup>
+      <OutputPath>..\..\bin\$(MSBuildProjectName)\$(Platform)-$(Configuration)</OutputPath>
+   </PropertyGroup>
+</Project>

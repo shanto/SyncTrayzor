@@ -34,13 +34,12 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
+    <ApplicationIcon>Icons\default.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icons\default.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\bin\x64\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
@@ -48,19 +47,8 @@
     <CodeAnalysisRuleSet>SyncTrayzor.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>..\..\bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>SyncTrayzor.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\bin\x86\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -69,8 +57,16 @@
     <Prefer32Bit>true</Prefer32Bit>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>SyncTrayzor.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>..\..\bin\x86\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
@@ -477,8 +473,11 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\Theme.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
@@ -487,6 +486,9 @@
     <Resource Include="Icons\syncing_2.ico" />
     <Resource Include="Icons\syncing_3.ico" />
     <Resource Include="Icons\syncing_4.ico" />
+    <Resource Include="Icons\paused_tray.ico" />
+    <Resource Include="Icons\default.ico" />
+    <Resource Include="Icons\alert_tray.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -504,9 +506,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\default.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -557,12 +556,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Licenses\ListViewLayoutManager.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\alert_tray.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\paused_tray.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Licenses\WindowsAPICodePack.txt" />
@@ -671,6 +664,6 @@
     <CallTarget Targets="Configs" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>call $(SolutionDir)/../build/get-syncthing.bat</PostBuildEvent>
+    <!--PostBuildEvent>call $(SolutionDir)/../build/get-syncthing.bat</PostBuildEvent-->
   </PropertyGroup>
 </Project>
