@@ -1,72 +1,75 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:st="clr-namespace:Stylet;assembly=Stylet"
-                    xmlns:oxy="http://oxyplot.org/wpf"
-                    xmlns:p="clr-namespace:SyncTrayzor.Pages"
-                    xmlns:s="clr-namespace:SyncTrayzor.Pages.Settings"
-                    xmlns:c="clr-namespace:SyncTrayzor.Pages.ConflictResolution">
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:st="clr-namespace:Stylet;assembly=Stylet"
+    xmlns:oxy="http://oxyplot.org/wpf"
+    xmlns:p="clr-namespace:SyncTrayzor.Pages"
+    xmlns:s="clr-namespace:SyncTrayzor.Pages.Settings"
+    xmlns:c="clr-namespace:SyncTrayzor.Pages.ConflictResolution">
 
     <Style TargetType="Button" x:Key="DialogButton" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Padding" Value="10,5"/>
     </Style>
-    
+
+    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Padding" Value="5,2"/>
+    </Style>
+
     <Style TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
         <Style.Resources>
             <SolidColorBrush x:Key="MenuItem.Disabled.Background" Color="Transparent"></SolidColorBrush>
         </Style.Resources>
     </Style>
-    
+
     <Style x:Key="WindowEx" TargetType="Window" BasedOn="{StaticResource CustomWindowStyle}">
-        <Setter Property="Background" Value="{StaticResource Window.Static.Background}" />
+        <Setter Property="Icon" Value="{StaticResource TaskbarSyncing1Icon}"/>
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="Margin" Value="0,0,0,-1"/>
+            </Style>
+        </Style.Resources>
     </Style>
     <Style TargetType="p:ShellView" BasedOn="{StaticResource WindowEx}" />
     <Style TargetType="p:AboutView" BasedOn="{StaticResource WindowEx}" />
     <Style TargetType="p:ThirdPartyComponentsView" BasedOn="{StaticResource WindowEx}"/>
     <Style TargetType="p:UnhandledExceptionView" BasedOn="{StaticResource WindowEx}"/>
     <Style TargetType="c:ConflictResolutionView" BasedOn="{StaticResource WindowEx}"/>
-    <Style TargetType="st:MessageBoxView">
-        <Setter Property="Background" Value="{StaticResource Window.Static.Background}"/>
-        <Setter Property="SizeToContent" Value="Height"/>
-        <Setter Property="Width" Value="400"/>
+
+    <Style TargetType="st:MessageBoxView" BasedOn="{StaticResource WindowEx}">
         <Style.Resources>
             <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
         </Style.Resources>
     </Style>
     <Style TargetType="s:SettingsView" BasedOn="{StaticResource WindowEx}">
-        <Setter Property="SizeToContent" Value="Height"/>
-        <Setter Property="Width" Value="420"/>
         <Style.Resources>
             <Style TargetType="Button" BasedOn="{StaticResource DialogButton}"/>
         </Style.Resources>
     </Style>
 
-    <Style TargetType="p:ViewerView">
+    <Style x:Key="UserControlEx" TargetType="UserControl">
         <Setter Property="Background" Value="{StaticResource Window.Static.Background}" />
     </Style>
-    <Style TargetType="p:ConsoleView">
-        <Setter Property="Background" Value="{StaticResource Window.Static.Background}" />
-    </Style>
+    <Style TargetType="p:ViewerView" BasedOn="{StaticResource UserControlEx}"/>
+    <Style TargetType="p:ConsoleView" BasedOn="{StaticResource UserControlEx}"/>
+
     <Style TargetType="oxy:PlotView">
-        <Setter Property="Background" Value="{StaticResource TreeView.Static.Background }" />
+        <Setter Property="Background" Value="{StaticResource Window.Static.Background}" />
     </Style>
 
+    <Style x:Key="GroupBoxEx" TargetType="GroupBox">
+        <Setter Property="BorderThickness" Value="0.1,0.1,0.1,0.1"/>
+        <Setter Property="Padding" Value="5,15,5,10"/>
+        <Setter Property="Margin" Value="10,5"/>
+    </Style>
     <Style TargetType="DockPanel">
         <Setter Property="Background" Value="{DynamicResource Window.Static.Background}"/>
         <Style.Resources>
-            <Style TargetType="GroupBox">
-                <Setter Property="BorderThickness" Value="0.1,0.1,0.1,0.1"/>
-                <Setter Property="Padding" Value="5,15"/>
-                <Setter Property="Margin" Value="10,5"/>
-            </Style>
+            <Style TargetType="GroupBox" BasedOn="{StaticResource GroupBoxEx}"/>
         </Style.Resources>
     </Style>
     <Style TargetType="StackPanel">
         <Style.Resources>
-            <Style TargetType="GroupBox">
-                <Setter Property="BorderThickness" Value="0.1,0.1,0.1,0.1"/>
-                <Setter Property="Padding" Value="5,10"/>
-                <Setter Property="Margin" Value="5"/>
-            </Style>
+            <Style TargetType="GroupBox" BasedOn="{StaticResource GroupBoxEx}"/>
         </Style.Resources>
     </Style>
 </ResourceDictionary>
